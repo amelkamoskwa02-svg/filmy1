@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Netflix & Chill - Moje Filmy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ekran ładowania (Loader) -->
+  <div id="loader" class="loader-overlay">
+    <div class="netflix-loader"></div>
+  </div>
+
+  <!-- NAGŁÓWEK / NETFLIX NAV -->
+  <header class="netflix-nav">
+    <div class="nav-left">
+      <span class="logo">NETFLIX</span>
+      <nav class="nav-links">
+        <a href="#" class="active">Strona główna</a>
+        <a href="#movies-section">Kategorie</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Szukaj tytułu...">
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER (Styl Netflix) -->
+  <section class="hero-banner" id="hero-banner">
+    <div class="hero-backdrop" id="hero-backdrop"></div>
+    <div class="hero-content">
+      <h1 id="hero-title">CSI: Odcinek 18</h1>
+      <p id="hero-desc">Oglądaj najnowsze materiały w najwyższej jakości zintegrowane bezpośrednio z Twojego Dysku Google.</p>
+      <div class="hero-buttons">
+        <button id="hero-play-btn" class="btn-play">▶ Odtwórz</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="movies-section">
+    <!-- ODTWARZACZ -->
+    <section class="player-section" id="player-section">
+      <div class="player-header">
+        <h2 id="video-title">Wybierz film lub odcinek</h2>
+        <div class="player-controls">
+          <div id="timestamp-controls" style="display: none; align-items: center; gap: 6px;">
+            <input type="text" id="time-input" placeholder="np. 12:30">
+            <button id="save-time-btn" class="player-btn" title="Zapisz minutę">💾 Zapisz</button>
+          </div>
+          <button id="next-btn" class="player-btn" style="display: none;" title="Następny odcinek">⏭ Następny</button>
+          
+          <!-- Przycisk widoczny na telefonie -->
+          <button id="mobile-fullscreen-btn" class="player-btn mobile-only" style="display: none;" title="Pełny ekran (Mobilny)">📱 Pełny ekran</button>
+          
+          <!-- Tylko przycisk Powrót / Zamknij w trybie mobilnym -->
+          <button id="close-btn" class="player-btn close-btn" style="display: none;" aria-label="Zamknij" title="Zamknij odtwarzacz">← Powrót</button>
+        </div>
+      </div>
+      <div id="player-wrapper">
+        <img src="https://placehold.co/800x450/111111/FFFFFF?text=Wybierz+odcinek+z+listy+ponizej" alt="Podgląd" id="placeholder-img" loading="lazy">
+      </div>
+    </section>
+
+    <!-- KATEGORIE -->
+    <section class="categories-section">
+      <div class="categories">
+        <button class="category-btn" data-category="filmy">Filmy</button>
+        <button class="category-btn active" data-category="csi">CSI</button>
+        <button class="category-btn" data-category="serial1670_s1">1670 (Sezon 1)</button>
+        <button class="category-btn" data-category="serial1670_s2">1670 (Sezon 2)</button>
+      </div>
+    </section>
+
+    <!-- LISTA / SIATKA FILMÓW -->
+    <section class="movies-section">
+      <h2 class="section-title">Wszystkie tytuły</h2>
+      <div id="movies-grid" class="movies-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
